@@ -53,8 +53,27 @@ let characters = [
 ];
 
 const sortByChildren = (charArray) => {
-  // Solution code here...
-};
+  function compareChar(a,b){
+    if(a.children.length > b.children.length){
+      return 1
+    }
+    if (a.children.length < b.children.length){
+      return -1
+    }
+    if (a.children.length === b.children.length){
+        if (a.house < b.house) {
+          return -1;
+        }
+        if (a.house > b.house) {
+          return 1;
+        }
+
+        // names must be equal
+        return 0;
+      };
+    }
+    return charArray.sort(compareChar)
+  }
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -64,8 +83,12 @@ Write a function named containsW that takes in a string. This function should us
 ------------------------------------------------------------------------------------------------ */
 
 const containsW = (str) => {
-  // Solution code here...
-};
+  let pattern = /[w]/gm
+
+  if (str.match(pattern)){
+    return true;
+  }
+  else{return false}
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -80,8 +103,11 @@ For example:
 ------------------------------------------------------------------------------------------------ */
 
 const isNum = (input) => {
-  // Solution code here...
-};
+  let pattern = /[\d+$]/gm;
+
+ return pattern.test(input);
+}
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -91,8 +117,12 @@ Write a function named containsWorld that takes in a string or number of any len
 ------------------------------------------------------------------------------------------------ */
 
 const containsWorld = (input) => {
-  // Solution code here...
-};
+  let pattern = /\bworld\b/gm
+
+  if (input.match(pattern)){
+    return true;
+  }else{return false;}
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
@@ -103,11 +133,11 @@ Return an array containing all the matches.
 ------------------------------------------------------------------------------------------------ */
 
 const isCapitalized = (str) => {
-  let pattern = /[A-Z][a-zA-Z]*/gm;
+  let pattern = /\b[A-Z][a-zA-Z]*/gm;
 
-  let capitalWords = str.match(pattern);
-  return capitalWords || [];
-};
+  let capWords = str.match(pattern);
+  return capWords || [];
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
@@ -116,9 +146,15 @@ Write a function named citiesAtoJ that takes in an array of city names and uses 
 ------------------------------------------------------------------------------------------------ */
 
 const citiesAtoJ = (arr) => {
-  let pattern = /[A-J][a-zA-Z]*/gm;
-};
+  let pattern = /^[A-J]/gm;
 
+  let newArr = [];
+  arr.map(city=> {
+    if(city.match(pattern)){
+      newArr.push(city);
+    }
+  });
+  return newArr;
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
 
