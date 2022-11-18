@@ -37,7 +37,8 @@ Write a function that appends ' The end.' to a string, and returns the modified 
 ------------------------------------------------------------------------------------------------ */
 
 const appendTheEnd = (str) => {
-  // Solution code here...
+  let newStr = str + ' The end.';
+  return newStr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -54,7 +55,8 @@ console.log(a) prints [1, 2, 3, 1]
 ------------------------------------------------------------------------------------------------ */
 
 const appendFirstToLast = (arr) => {
-  // Solution code here...
+  let newItem = arr[0];
+  arr.push(newItem);
 };
 
 /* ------------------------------------------------------------------------------------------------
