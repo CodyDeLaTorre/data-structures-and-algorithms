@@ -89,7 +89,7 @@ const containsW = (str) => {
     return true;
   }
   else{return false}
-
+}
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
 
@@ -122,7 +122,7 @@ const containsWorld = (input) => {
   if (input.match(pattern)){
     return true;
   }else{return false;}
-
+}
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
@@ -137,7 +137,7 @@ const isCapitalized = (str) => {
 
   let capWords = str.match(pattern);
   return capWords || [];
-
+}
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
@@ -155,6 +155,7 @@ const citiesAtoJ = (arr) => {
     }
   });
   return newArr;
+}
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
 
