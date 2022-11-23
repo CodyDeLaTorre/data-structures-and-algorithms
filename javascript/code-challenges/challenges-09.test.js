@@ -9,14 +9,10 @@ using the 'reduce' method.
 E.g. [4,2,7,5,9,2] -> 9
 ------------------------------------------------------------------------------------------------ */
 const maxInArray = (arr) => {
-  let partNum = 0
-  arr.reduce((accumulator, currentVal) => {
-    if(accumulator > currentVal){
-      currentVal = accumulator
-    }
-    return currentVal;
-  },)
-  return currentVal + partNum;
+    return arr.reduce( (acc,curr) => {
+      if (curr>acc) return curr;
+      return acc;
+    }, 0);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -71,11 +67,10 @@ HR has asked you to change the data to make it easier to print so that it looks 
 ------------------------------------------------------------------------------------------------ */
 
 const updateNumbers = (obj) => {
-  let arr1 = Object.keys(obj);
-  let arr2= Object.values(obj);
-  let finalArr= arr1.map((arr2,idx)=>{
-      return arr1[idx] + ': ' + arr2[idx];
-  })
+  let arr = Object.entries(obj).map ( (entries) => {
+    return (entries.join(': '));
+  });
+  return arr;
 };
 
 
@@ -131,7 +126,7 @@ const characters = [
 
 const getHouses = (arr) => {
   let houses = [];
-  // Solution code here...
+  arr.map ((x)=> houses.push(x.house));
   return houses;
 };
 
@@ -148,7 +143,9 @@ hasChildrenValues(characters, 'Sansa') will return false
 ------------------------------------------------------------------------------------------------ */
 
 const hasChildrenValues = (arr, character) => {
-  // Solution code here...
+  let newArr = arr.filter(charObj => Object.keys(charObj).includes('children')).filter(charOb => Object.values(charOb).includes(character));
+
+  return newArr.length === 0 ? false : true;
 
 };
 
