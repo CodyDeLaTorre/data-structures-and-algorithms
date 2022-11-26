@@ -19,7 +19,11 @@ Becomes:
 ------------------------------------------------------------------------------------------------ */
 
 function transformToLis(obj){
-
+  let newArr = [];
+  for(let i in obj){
+    newArr.push(`<li>${i}: ${obj[i]}</li>`)
+  }
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -34,10 +38,14 @@ For example, count(5, [[1, 3, 5, 7, 9], [5, 5, 5], [1, 2, 3]]) returns 4.
 
 const count = (target, input) => {
   let curCount = 0;
-  let newArr = input.map(item => {
-    item.find(target);
+  input.map(item => {
+    item.map(x => {
+      if (x===target){
+        curCount++;
+      }
+    });
   });
-  return newArr;
+  return curCount;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -51,11 +59,13 @@ For example, [[1, 2, 3, 4, 5], [6, 7, 2, 4, 5, 7], [9, 2, 3, 6,]] returns 66.
 ------------------------------------------------------------------------------------------------ */
 
 const totalSum = (input) => {
-  input.map((array)=>{
-    array.map((innerArr) => {
-
+  let total = 0;
+  input.map(array =>{
+    array.map(num => {
+     total = total + num;
     })
   })
+  return total;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -139,7 +149,16 @@ let starWarsData = [{
 }];
 
 let findMaleAndFemale = (data) => {
-  // Solution code here...
+  let str = '';
+  data.map (x => {
+    if (x.gender === 'male'){
+      str += x.name + ' and ';
+    } if (x.gender === 'female'){
+      str += x.name + ' and ';
+    }
+  });
+  const lastIndexOfSpace = str.lastIndexOf(' ');
+  return str.substring(0,lastIndexOfSpace-4);
 };
 
 /* ------------------------------------------------------------------------------------------------
