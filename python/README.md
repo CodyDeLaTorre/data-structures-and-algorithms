@@ -77,4 +77,6 @@ From the root of the `data-structures-and-algorithms/python` folder, execute the
 
 ## Table of Contents
 
-[Read Me for arya-reverse](docs/array_reverse/array_reverse.md)
+[Read Me for array-reverse](docs/array_reverse/array_reverse.md)
+
+[Read Me for array-insert-shift](docs/array_insert_shift/array_insert_shift.md)
