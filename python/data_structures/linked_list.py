@@ -6,15 +6,6 @@ class Node:
 
 class LinkedList:
     """
-    Put docstring here
-    def insert(self, value):
-    new_node = Node(value)
-    if not self.head:
-        self.head = new_node
-    current_node = self.head
-    while current_node.next:
-        current_node = current_node.next
-    current_node.next = new_node
     """
 
     def __init__(self, head=None, values=None):
@@ -36,27 +27,41 @@ class LinkedList:
 
     def __str__(self):
         string_values = ""
-        # while self.head is not None:
-        #     string_values += f"{{ { self.head.value } }} -> "
-        #     self.head = self.head.next
-        # string_values += "NULL"
-        # return string_values
         for value in self:
             string_values += f"{{ {value} }} -> "
-
         return string_values + "NULL"
 
     def insert(self, value):
         self.head = Node(value, self.head)
 
-    # def add_to_start(self, new_node):
-    #     temp = self.Head
-    #     self.Head = new_node
-    #     new_node.next = temp
-    #
-    #     self.Count += 1
-    #     if self.Count == 1:
-    #         self.Tail = self.Head
+    def insert_before(self, before, value):
+        current = self.head
+        previous = None
+        if current is None:
+            raise TargetError
+        while current.value is not before:
+            previous = current
+            current = current.next
+            if current is None:
+                raise TargetError
+        new_node = Node(value)
+        new_node.next = current
+        if previous is not None:
+            previous.next = new_node
+        if previous is None:
+            self.head = new_node
+
+    def insert_after(self, after, value):
+        current = self.head
+        if current is None:
+            raise TargetError
+        while current.value is not after:
+            current = current.next
+            if current is None:
+                raise TargetError
+        new_node = Node(value)
+        new_node.next = current.next
+        current.next = new_node
 
     def includes(self, value):
         current = self.head
@@ -66,6 +71,12 @@ class LinkedList:
             current = current.next
         return False
 
+    def append(self, value):
+        current = self.head
+        while current.next is not None:
+            current = current.next
+        current.next = Node(value)
 
-class TargetError:
+
+class TargetError(Exception):
     pass
