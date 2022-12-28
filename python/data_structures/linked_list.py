@@ -1,7 +1,8 @@
 class Node:
-    def __init__(self, value=None, next=None):
+    def __init__(self, value, next_=None):
         self.value = value
-        self.next = next
+        self.next = next_
+
 
 
 class LinkedList:
@@ -9,21 +10,25 @@ class LinkedList:
     Put docstring here
     """
 
-    def __init__(self):
-        self.head = None
+    def __init__(self, head=None, values=None):
+        self.head = head
+        if values:
+            for value in reversed(values):
+                self.insert(value)
 
     def __str__(self):
-        stringval = self.head
         string_values = ""
-        while stringval is not None:
-            string_values += f"{ { stringval.value} } -> "
-            stringval = stringval.next
+        if self.head is None:
+            return f"NULL"
+        while self.head is not None:
+            string_values += f"{{ { self.head.value } }} -> "
+            self.head = self.head.next
         string_values += "NULL"
         return string_values
 
     def insert(self, value):
-        node = Node(value, self.head)
-        self.head = node
+        self.head = Node(value, self.head)
+        # self.head = node
 
     def includes(self, value):
         current = self.head
