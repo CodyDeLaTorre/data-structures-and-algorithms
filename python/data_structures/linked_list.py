@@ -26,10 +26,17 @@ class LinkedList:
         return value_generator()
 
     def __str__(self):
-        string_values = ""
-        for value in self:
-            string_values += f"{{ {value} }} -> "
-        return string_values + "NULL"
+        current = self.head
+        text = ""
+        while current:
+            node_string = "{ " + current.value + " } -> "
+            text += node_string
+            current = current.next
+        return text + "NULL"
+        # string_values = ""
+        # for value in self:
+        #     string_values += f"{{ {value} }} -> "
+        # return string_values + "NULL"
 
     def insert(self, value):
         self.head = Node(value, self.head)
