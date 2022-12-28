@@ -83,4 +83,6 @@ From the root of the `data-structures-and-algorithms/python` folder, execute the
 
 [Read Me for array-binary-search](docs/array_binary_search)
 
-[Read Me for Linked lists](docs/linked_list_insertions/README.md)
+[Read Me for Linked lists](docs/linked_list_zip/README.md)
+
+[Read Me for Linked Lists Insertions](docs/linked_list_insertions)
