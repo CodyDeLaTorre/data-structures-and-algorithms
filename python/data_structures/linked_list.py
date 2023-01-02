@@ -27,16 +27,11 @@ class LinkedList:
 
     def __str__(self):
         current = self.head
-        text = ""
-        while current:
-            node_string = "{ " + current.value + " } -> "
-            text += node_string
+        string = ""
+        while current is not None:
+            string += "{ " + str(current.value) + " } -> "
             current = current.next
-        return text + "NULL"
-        # string_values = ""
-        # for value in self:
-        #     string_values += f"{{ {value} }} -> "
-        # return string_values + "NULL"
+        return string + "NULL"
 
     def insert(self, value):
         self.head = Node(value, self.head)
