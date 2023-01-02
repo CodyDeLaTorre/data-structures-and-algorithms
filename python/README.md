@@ -90,3 +90,5 @@ From the root of the `data-structures-and-algorithms/python` folder, execute the
 [Read Me for linked list kth](docs/linked_list_kth/README.md)
 
 [Read Me for linked list zip](docs/linked_list_zip/README.md)
+
+[Read Me for Stack and Q](docs/stack_and_queue/README.md)
