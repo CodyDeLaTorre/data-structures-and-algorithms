@@ -92,3 +92,7 @@ From the root of the `data-structures-and-algorithms/python` folder, execute the
 [Read Me for linked list zip](docs/linked_list_zip/README.md)
 
 [Read Me for Stack and Q](docs/stack_and_queue/README.md)
+
+[Read Me for StackQ pseudo](docs/stack_queue_pseudo/README.md)
+
+[Read Me for StackQ Shelter](docs/stack_queue_animal_shelter/README.md)

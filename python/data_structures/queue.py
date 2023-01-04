@@ -1,5 +1,6 @@
 from data_structures.invalid_operation_error import InvalidOperationError
 
+
 class Node:
     def __init__(self, value, next_=None):
         self.value = value
