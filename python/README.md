@@ -100,3 +100,5 @@ From the root of the `data-structures-and-algorithms/python` folder, execute the
 [Read Me for StackQ Brackets](docs/stack_queue_brackets/README.md)
 
 [Read Me for Trees](docs/trees/README.md)
+
+[Read Me for Tree Max](docs/tree_max/README.md)
