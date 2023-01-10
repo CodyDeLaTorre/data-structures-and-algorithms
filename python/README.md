@@ -98,3 +98,5 @@ From the root of the `data-structures-and-algorithms/python` folder, execute the
 [Read Me for StackQ Shelter](docs/stack_queue_animal_shelter/README.md)
 
 [Read Me for StackQ Brackets](docs/stack_queue_brackets/README.md)
+
+[Read Me for Trees](docs/trees/README.md)
