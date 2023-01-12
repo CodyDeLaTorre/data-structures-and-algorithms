@@ -17,5 +17,5 @@ def fizz_buzz_tree(tree):
         for x in node.children:
             fizz_buzz_list(x)
 
-        fizz_buzz_list(new_tree.root)
-        return new_tree
+    fizz_buzz_list(new_tree.root)
+    return new_tree
