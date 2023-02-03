@@ -106,3 +106,7 @@ From the root of the `data-structures-and-algorithms/python` folder, execute the
 [Read me for tree breadth first](docs/tree_breadth_first/README.md)
 
 [READ Me for Insertion](docs/insertion/README.md)
+
+[Read Me for hashtable repeat](docs/hashtable_repeated_word/README.md)
+
+[Read Me for tree insertion](docs/tree_intersection/README.md)
